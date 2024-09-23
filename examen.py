@@ -1,37 +1,6 @@
 import numpy as np
 import math
 
-# Menú interactivo
-def mostrar_menu():
-    print("\nSelecciona el metodo que deseas utilizar:")
-    print("1. Metodo Simplex")
-    print("2. Metodo de la Gran M")
-    print("3. Metodo de las Dos Fases")
-    print("4. Salir")
-
-def ejecutar_seleccion(opcion):
-    if opcion == "1":
-        metodo_simplex()
-    elif opcion == "2":
-        metodo_gran_m()
-    elif opcion == "3":
-        metodo_dos_fases()
-    elif opcion == "4":
-        print("Saliendo del programa.")
-    else:
-        print("Opción no válida. Intenta nuevamente.")
-
-# Función principal para ejecutar el menú
-def main():
-    opcion = ""
-    while opcion != "4":
-        mostrar_menu()
-        opcion = input("Elige una opción: ")
-        ejecutar_seleccion(opcion)
-
-if __name__ == "__main__":
-    main()
-
 # Métodos de optimización simplex, gran M, dos fases
 def metodo_simplex():
     print("Ejecutando el Método Simplex...")
@@ -306,4 +275,36 @@ def simplex_gran_m(tableau, vars_artificiales):
     return solucion[:num_vars - len(vars_artificiales)]  # Excluir variables artificiales
 
 # ------------------------------------------------------------------------------
+
+
+# Menú interactivo
+def mostrar_menu():
+    print("\nSelecciona el metodo que deseas utilizar:")
+    print("1. Metodo Simplex")
+    print("2. Metodo de la Gran M")
+    print("3. Metodo de las Dos Fases")
+    print("4. Salir")
+
+def ejecutar_seleccion(opcion):
+    if opcion == "1":
+        metodo_simplex()
+    elif opcion == "2":
+        metodo_gran_m()
+    elif opcion == "3":
+        metodo_dos_fases()
+    elif opcion == "4":
+        print("Saliendo del programa.")
+    else:
+        print("Opción no válida. Intenta nuevamente.")
+
+# Función principal para ejecutar el menú
+def main():
+    opcion = ""
+    while opcion != "4":
+        mostrar_menu()
+        opcion = input("Elige una opción: ")
+        ejecutar_seleccion(opcion)
+
+if __name__ == "__main__":
+    main()
 
